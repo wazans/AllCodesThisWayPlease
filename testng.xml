@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+    <test name="Test">
+        <parameter name="browser" value="firefox" />
+        <classes>
+<!--            <class name="TestNGDemo.A_Testng"/> &lt;!&ndash; Replace with your test class package name &ndash;&gt;-->
+            <class name="TestNGDemo.B_CrossBrowserTesting"/> <!-- Replace with your test class package name -->
+        </classes>
+    </test>
+</suite>
