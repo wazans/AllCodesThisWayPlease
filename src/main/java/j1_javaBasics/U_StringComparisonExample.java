@@ -4,9 +4,11 @@ public class U_StringComparisonExample {
     public static void main(String[] args) {
         String str1 = "Hello";
         String str2 = new String("Hello");
-        //When you create a string using the new keyword, it creates a new object on the heap
+        //When you create a string using the new keyword, 
+        //it creates a new object on the heap
         String str3 = "Hello";
-        //Both str1 and str3 refer to the same object because they are initialized with the same literal.
+        //Both str1 and str3 refer to the same object 
+        //because they are initialized with the same literal.
 
         // Using == for reference equality
         //The == operator checks if two references point to the same object.

@@ -7,6 +7,8 @@ public class ReverseNumber {
             rev=rev+mynum.charAt(i);
         }
         System.out.print(rev);
+        //Change this to command line argument
+       
     }
 
 

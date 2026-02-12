@@ -13,7 +13,8 @@ public class B_HashMap {
         hs.put(null,"another no city");//will replace
         hs.put(11,null);//allows null values but only one null key
         System.out.println(hs);
-        //Not synchronised: If multiple threads access a HashMap concurrently, and at least one of the threads modifies the map structurally, it must be synchronized externally.
+        //Not synchronised: If multiple threads access a HashMap concurrently, 
+        //and at least one of the threads modifies the map structurally, it must be synchronized externally.
         //Does not maintain insertion order: The order of keys and values can change.
         HashMap<String, String> map = new HashMap<>();
         map.put("One", "1");

@@ -11,6 +11,6 @@ public class K_AutoBoxingAndUnboxing {
 
         int num3=num2;  //Auto-UnBoxing
         System.out.println("The object reference variable num2 is converted into into primitive variable num3 and this is Auto-unboxing "  +num2);
-
+        ArrayList<> list=new ArrayList<>();
     }
 }
