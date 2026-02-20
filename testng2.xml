@@ -1,0 +1,14 @@
+<suite name="Suite">
+    <test name="GroupTest">
+        <groups>
+            <run>
+                <exclude name="regression"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="TestNGDemo.TestNG_Groups_Demo"/>
+        </classes>
+    </test>
+</suite>
+

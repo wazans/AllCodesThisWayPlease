@@ -15,63 +15,57 @@ import java.sql.PreparedStatement;
 */
 public class Class5_Transaction_Management {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Connection con = null;
+		Connection con = null;
 
-        try {
-            // Load Oracle JDBC Driver
-            // Registers driver with JVM
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+		try {
+			// Load Oracle JDBC Driver
+			// Registers driver with JVM
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-            // Create DB connection
-            // Opens a session with Oracle database
-            con = DriverManager.getConnection(
-                "jdbc:oracle:thin:@localhost:1521/XE",
-                "SYSTEM",
-                "root"
-            );
+			// Create DB connection
+			// Opens a session with Oracle database
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE", "SYSTEM", "root");
 
-            // Disable auto-commit
-            // ✅ Applies ONLY to DML (INSERT / UPDATE / DELETE)
-            // ❌ Does NOT affect DDL (CREATE / DROP / ALTER)
-            con.setAutoCommit(false);
+			// Disable auto-commit
+			// ✅ Applies ONLY to DML (INSERT / UPDATE / DELETE)
+			// ❌ Does NOT affect DDL (CREATE / DROP / ALTER)
+			con.setAutoCommit(false);
 
-            // Prepare INSERT statement (DML)
-            PreparedStatement ps =
-                con.prepareStatement(
-                    "INSERT INTO emp_jdbc VALUES (?, ?, ?)"
-                );
+			// Prepare INSERT statement (DML)
+			PreparedStatement ps = con.prepareStatement("INSERT INTO emp_jdbc VALUES (?, ?, ?)");
 
-            // Set values for INSERT
-            ps.setInt(1, 3);          // id = 2
-            ps.setString(2, "Nehal");  // name = Neha
-            ps.setInt(3, 71000);      // salary = 60000
+			// Set values for INSERT
+			ps.setInt(1, 3); // id = 2
+			ps.setString(2, "Nehal"); // name = Neha
+			ps.setInt(3, 71000); // salary = 60000
 
-            // Execute INSERT
-            // ✅ Row is added but NOT yet permanent
-            // ✅ Can still be rolled back
-            ps.executeUpdate();
+			// Execute INSERT
+			// ✅ Row is added but NOT yet permanent
+			// ✅ Can still be rolled back
+			ps.executeUpdate();
 
-            // ================= COMMIT =================
-            // ✅ Makes INSERT permanent in database
-            // ❌ Cannot be rolled back after this
-            con.commit();
+			// ================= COMMIT =================
+			// ✅ Makes INSERT permanent in database
+			// ❌ Cannot be rolled back after this
+			con.commit();
 
-            System.out.println("Transaction committed");
+			System.out.println("Transaction committed");
 
-            // Close connection
-            // Ends DB session
-            con.close();
+			// Close connection
+			// Ends DB session
+			con.close();
 
-        } catch (Exception e) {
-            try {
-                // ================= ROLLBACK =================
-                // ❌ Undoes INSERT if COMMIT was NOT executed
-                // ❌ Does nothing if COMMIT already happened
-                con.rollback();
-                System.out.println("Transaction rolled back");
-            } catch (Exception ex) {}
-        }
-    }
+		} catch (Exception e) {
+			try {
+				// ================= ROLLBACK =================
+				// ❌ Undoes INSERT if COMMIT was NOT executed
+				// ❌ Does nothing if COMMIT already happened
+				con.rollback();
+				System.out.println("Transaction rolled back");
+			} catch (Exception ex) {
+			}
+		}
+	}
 }

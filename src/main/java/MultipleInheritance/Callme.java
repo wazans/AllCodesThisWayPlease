@@ -1,7 +1,7 @@
 package MultipleInheritance;
 
 public class Callme {
-	 public void display() {
+	public void display() {
 		System.out.println("hello");
 	}
 

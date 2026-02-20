@@ -12,27 +12,26 @@ import java.sql.DriverManager;
 */
 public class Class1_Introduction_JDBC {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        try {
-            // Step 1: Load Oracle JDBC Driver into JVM
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+		try {
+			// Step 1: Load Oracle JDBC Driver into JVM
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-            // Step 2: Create connection using DriverManager
-            Connection con = DriverManager.getConnection(
-                "jdbc:oracle:thin:@localhost:1521/XE", // Oracle URL
-                "SYSTEM",                              // DB username
-                "root"                                 // DB password
-            );
+			// Step 2: Create connection using DriverManager
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE", // Oracle URL
+					"SYSTEM", // DB username
+					"root" // DB password
+			);
 
-            // If connection is successful
-            System.out.println("Oracle JDBC Connection Established");
+			// If connection is successful
+			System.out.println("Oracle JDBC Connection Established");
 
-            // Step 3: Close connection
-            con.close();
+			// Step 3: Close connection
+			con.close();
 
-        } catch (Exception e) {
-           e.printStackTrace();
-        }
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -8,7 +8,6 @@ public class CopilotCheck {
 		String result = (num % 2 == 0) ? "even" : "odd";
 		System.out.println("The number is " + result);
 
-
 	}
 
 }

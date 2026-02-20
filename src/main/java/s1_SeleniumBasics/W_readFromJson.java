@@ -19,62 +19,62 @@ import java.util.List;
 
 public class W_readFromJson {
 
-    private WebDriver driver;
+	private WebDriver driver;
 
-    @BeforeClass
-    public void setUp() {
-        // Set the path for the ChromeDriver executable
-        //System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
-        driver = new ChromeDriver();
-    }
+	@BeforeClass
+	public void setUp() {
+		// Set the path for the ChromeDriver executable
+		// System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+		driver = new ChromeDriver();
+	}
 
-    @DataProvider(name = "formData")
-    public Object[][] formData() throws IOException {
-        // Read JSON data
-        FileReader reader = new FileReader("data.json");
-        StringBuilder jsonString = new StringBuilder();
-        int ch;
-        while ((ch = reader.read()) != -1) {
-            jsonString.append((char) ch);
-        }
-        reader.close();
+	@DataProvider(name = "formData")
+	public Object[][] formData() throws IOException {
+		// Read JSON data
+		FileReader reader = new FileReader("data.json");
+		StringBuilder jsonString = new StringBuilder();
+		int ch;
+		while ((ch = reader.read()) != -1) {
+			jsonString.append((char) ch);
+		}
+		reader.close();
 
-        JSONArray jsonArray = new JSONArray(jsonString.toString());
-        Object[][] data = new Object[jsonArray.length()][3];
+		JSONArray jsonArray = new JSONArray(jsonString.toString());
+		Object[][] data = new Object[jsonArray.length()][3];
 
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject json = jsonArray.getJSONObject(i);
-            data[i][0] = json.getString("name");
-            data[i][1] = json.getString("email");
-            data[i][2] = json.getString("password");
-        }
+		for (int i = 0; i < jsonArray.length(); i++) {
+			JSONObject json = jsonArray.getJSONObject(i);
+			data[i][0] = json.getString("name");
+			data[i][1] = json.getString("email");
+			data[i][2] = json.getString("password");
+		}
 
-        return data;
-    }
+		return data;
+	}
 
-    @Test(dataProvider = "formData")
-    public void testRegistrationForm(String name, String email, String password) {
-        WebElement nameField = driver.findElement(By.id("name"));
-        WebElement emailField = driver.findElement(By.id("email"));
-        WebElement passwordField = driver.findElement(By.id("password"));
-        WebElement submitButton = driver.findElement(By.id("submit"));
-        WebElement message = driver.findElement(By.id("message"));
+	@Test(dataProvider = "formData")
+	public void testRegistrationForm(String name, String email, String password) {
+		WebElement nameField = driver.findElement(By.id("name"));
+		WebElement emailField = driver.findElement(By.id("email"));
+		WebElement passwordField = driver.findElement(By.id("password"));
+		WebElement submitButton = driver.findElement(By.id("submit"));
+		WebElement message = driver.findElement(By.id("message"));
 
-        nameField.clear();
-        emailField.clear();
-        passwordField.clear();
+		nameField.clear();
+		emailField.clear();
+		passwordField.clear();
 
-        nameField.sendKeys(name);
-        emailField.sendKeys(email);
-        passwordField.sendKeys(password);
-        submitButton.click();
+		nameField.sendKeys(name);
+		emailField.sendKeys(email);
+		passwordField.sendKeys(password);
+		submitButton.click();
 
-        // Assert that the registration success message is displayed
-        Assert.assertTrue(message.isDisplayed(), "Registration successful message is not displayed.");
-    }
+		// Assert that the registration success message is displayed
+		Assert.assertTrue(message.isDisplayed(), "Registration successful message is not displayed.");
+	}
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
+	@AfterClass
+	public void tearDown() {
+		driver.quit();
+	}
 }

@@ -17,31 +17,29 @@ import java.util.Enumeration;
 */
 public class Class5_DriverManager_AdvancedMethods {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        try {
-            // ================= JVM LEVEL =================
-            // DriverManager maintains a list of JDBC drivers
-            // that are REGISTERED with the JVM (not the DB)
+		try {
+			// ================= JVM LEVEL =================
+			// DriverManager maintains a list of JDBC drivers
+			// that are REGISTERED with the JVM (not the DB)
 
-            // Step 1: Fetch all registered JDBC drivers
-            // This does NOT open DB connection
-            Enumeration<Driver> drivers = DriverManager.getDrivers();
+			// Step 1: Fetch all registered JDBC drivers
+			// This does NOT open DB connection
+			Enumeration<Driver> drivers = DriverManager.getDrivers();
 
-            // Step 2: Iterate over registered drivers
-            // This reads driver metadata from JVM memory
-            while (drivers.hasMoreElements()) {
-                Driver d = drivers.nextElement();
+			// Step 2: Iterate over registered drivers
+			// This reads driver metadata from JVM memory
+			while (drivers.hasMoreElements()) {
+				Driver d = drivers.nextElement();
 
-                // Prints fully qualified driver class name
-                // Example: oracle.jdbc.driver.OracleDriver
-                System.out.println(
-                        "Registered Driver: " + d.getClass().getName()
-                );
-            }
+				// Prints fully qualified driver class name
+				// Example: oracle.jdbc.driver.OracleDriver
+				System.out.println("Registered Driver: " + d.getClass().getName());
+			}
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

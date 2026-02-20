@@ -5,7 +5,7 @@ import MultipleInheritance.Callme;
 public class AnotherClass {
 
 	public static void main(String[] args) {
-		Callme obj=new Callme();
+		Callme obj = new Callme();
 		obj.display();
 	}
 
