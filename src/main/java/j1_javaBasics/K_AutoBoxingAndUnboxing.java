@@ -1,5 +1,7 @@
 package j1_javaBasics;
 
+import java.util.ArrayList;
+
 public class K_AutoBoxingAndUnboxing {
 	public static void main(String[] args) {
 		int num = 8; // primitive data type 'int' and primitive variable 'num'
@@ -17,6 +19,6 @@ public class K_AutoBoxingAndUnboxing {
 		System.out.println(
 				"The object reference variable num2 is converted into into primitive variable num3 and this is Auto-unboxing "
 						+ num2);
-		ArrayList<> list = new ArrayList<>();
+
 	}
 }

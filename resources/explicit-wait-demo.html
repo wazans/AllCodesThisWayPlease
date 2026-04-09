@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wait Demo</title>
+
+  <script>
+    function showButton() {
+        setTimeout(function() {
+            document.getElementById("btn").style.display = "block";
+        }, 3000);
+    }
+
+    function showAlert() {
+        setTimeout(function() {
+            alert("This is an alert!");
+        }, 2000);
+    }
+  </script>
+</head>
+
+<body onload="showButton()">
+
+<h2>Explicit Wait Full Demo</h2>
+
+<!-- Hidden button -->
+<button id="btn" style="display:none;" onclick="showAlert()">Click Me</button>
+
+<!-- Element always present but invisible initially -->
+<div id="text" style="display:none;">Hello Visible Text</div>
+
+<script>
+  setTimeout(function(){
+      document.getElementById("text").style.display="block";
+  }, 4000);
+</script>
+
+</body>
+</html>

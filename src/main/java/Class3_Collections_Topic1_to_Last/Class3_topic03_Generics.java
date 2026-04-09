@@ -15,7 +15,7 @@ public class Class3_topic03_Generics {
 		list.add("JavaScript");
 		list.add("Ruby");
 		list.add("Go");
-		list.add(12); // This will cause a compile-time error
+		//list.add(12); // This will cause a compile-time error
 
 		// iterate through the list and print each element
 		for (String s : list) {

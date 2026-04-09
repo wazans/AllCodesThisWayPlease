@@ -15,7 +15,7 @@ public class Class3_topic14_LinkedHashSet {
 		set.add(2);
 		set.add(3); // duplicate, will be ignored
 		System.out.println(set.contains(12));
-		System.out.println(set.getFirst());
+		//System.out.println(set.getFirst());
 		System.out.println(set);
 
 		/*

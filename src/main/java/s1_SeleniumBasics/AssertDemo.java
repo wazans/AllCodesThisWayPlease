@@ -12,7 +12,9 @@ import org.testng.asserts.Assertion;
 public class AssertDemo {
 	public static WebDriver driver;
 
-	public static void MouseAmazon() {
+	public static void main(String[] args) {
+		
+	} {
 		driver = new ChromeDriver();
 		driver.get("https://www.amazon.in/");
 		// WebElement signinlink= WaitUtils.ElementClickable(driver,

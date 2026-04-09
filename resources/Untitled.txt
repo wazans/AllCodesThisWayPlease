@@ -1,0 +1,8 @@
+
+<input id="username" type="text" placeholder="Enter username">   ===== WebElement usernameInput=//input[@id='username'] 
+<label>Enter your Password</label> == driver.findElement(
+                with(By.tagName("input")).below(usernameInput)
+
+
+//label[text()='Password']
+

@@ -5,6 +5,10 @@ class Person1 {
 }
 
 class Students1 extends Person {
+	@Override
+	void getUID() {
+
+	}
 }
 
 public class Class1_OjectsExplained {

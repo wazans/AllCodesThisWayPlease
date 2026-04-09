@@ -5,5 +5,5 @@ public abstract class A {
 }
 
 
-A a=new B();
-a.display();
+//A a=new B();
+//a.display();

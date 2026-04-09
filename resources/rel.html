@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relative Locators Demo</title>
+  <style>
+    .form-container {
+      width: 300px;
+      margin: 100px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: sans-serif;
+    }
+    input, button, label {
+      padding: 10px;
+      font-size: 14px;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <label id="username-label">Username</label>
+    <input id="username" type="text" placeholder="Enter username" />
+    <label id="password-label">Password</label>
+    <div class="row">
+      <button id="showPwd">👁 Show</button>
+      <input id="password" type="password" placeholder="Enter password" />
+    </div>
+    <button id="loginBtn">Login</button>
+    <button id="dynamicBtn" onclick="changeDynamic()">Click Me</button>
+<p id="dynamicText">Value: 0</p>
+
+<script>
+  let count = 0;
+
+  function changeDynamic() {
+    count++;
+    document.getElementById("dynamicText").innerText = "Value: " + count;
+  }
+</script>
+  </div>
+</body>
+</html>

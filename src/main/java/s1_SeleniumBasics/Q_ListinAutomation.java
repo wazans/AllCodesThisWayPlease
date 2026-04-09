@@ -6,21 +6,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class Q_ListinAutomation {
 	public static void main(String[] args) {
+
 		WebDriver driver = new ChromeDriver();
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
-		// List<WebElement> tablerows=driver.findElements(By.xpath("//table/tbody/tr"));
-		List<WebElement> tablerows = driver.findElements(By.cssSelector("tr"));
-		for (WebElement iter : tablerows) {
-			List<WebElement> column = iter.findElements(By.xpath("td"));
-			String get_value = column.get(2).getText();
-			System.out.println(get_value);
+		// Correct path
+		String path = System.getProperty("user.dir") + "/resources/DynamicTable.html";
+		driver.get("file:///" + path);
 
+		driver.manage().window().maximize();
+
+		// ✅ Only tbody rows (skip header)
+		List<WebElement> tablerows = driver.findElements(
+				By.cssSelector("#mixedTable tbody tr"));
+
+		for (WebElement row : tablerows) {
+
+			// ✅ Always use relative XPath
+			List<WebElement> columns = row.findElements(By.xpath("./td"));
+
+			// Safety check
+			if (columns.size() > 1) {
+				String name = columns.get(1).getText(); // Name column
+				System.out.println(name);
+			}
 		}
+
+		driver.quit();
 	}
 }

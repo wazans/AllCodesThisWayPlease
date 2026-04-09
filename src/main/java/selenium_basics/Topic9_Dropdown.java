@@ -11,6 +11,7 @@ public class Topic9_Dropdown {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demo.automationtesting.in/Register.html");
 		Select s = new Select(driver.findElement(By.id("Skills")));
+		//learn and use other methods as well
 		Thread.sleep(11000);
 		s.selectByVisibleText("C++");
 		Thread.sleep(5000);
