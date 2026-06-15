@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="ReportNG OrangeHRM Suite" parallel="false">
+    <!-- This suite is for learning ReportNG with Selenium and OrangeHRM. -->
+    <!-- It contains one passing test and one intentionally failing test. -->
+
+    <test name="ReportNG OrangeHRM Demo">
+        <classes>
+            <class name="testngtopics.Topic18_ReportNgOrangeHrm"/>
+        </classes>
+    </test>
+</suite>

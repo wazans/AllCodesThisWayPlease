@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="My Regression" parallel="false">
+    <test name="my first test">
+        <classes>
+
+            <class name="testngtopics.Topic02_AnnotationsAndBenefits"/>
+
+        </classes>
+    </test>
+
+</suite>

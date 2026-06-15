@@ -13,16 +13,16 @@ public class Topic9_Dropdown_country {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demo.automationtesting.in/Register.html");
 
-		WebElement countryDropdown = driver.findElement(By.id("country"));
-		Select s = new Select(countryDropdown);
+		WebElement SkillDropdown = driver.findElement(By.id("Skills"));
+		Select s = new Select(SkillDropdown);
 
 		// 1. Select by Visible Text
-		s.selectByVisibleText("India");
+		s.selectByVisibleText("C++");
 
 		Thread.sleep(2000);
 
 		// 2. Select by Value
-		s.selectByValue("India");   // value attribute from HTML
+		s.selectByValue("CSS");   // value attribute from HTML
 
 		Thread.sleep(2000);
 

@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="All Topics Suite" parallel="false">
+    <test name="All TestNG Topics">
+        <classes>
+
+            <class name="testngtopics.Topic02_AnnotationsAndBenefits"/>
+            <class name="testngtopics.Topic03_TestNgXmlAndIgnoringTests"/>
+            <class name="testngtopics.Topic04_Assertions"/>
+            <class name="testngtopics.Topic05_ParallelExecution"/>
+            <class name="testngtopics.Topic06_GroupsDemo"/>
+            <class name="testngtopics.Topic07_DependenciesDemo"/>
+            <class name="testngtopics.Topic08_ParametersFromXml"/>
+            <class name="testngtopics.Topic09_DataProviderWithoutExcel"/>
+            <class name="testngtopics.Topic10_DataProviderWithExcel"/>
+            <class name="testngtopics.Topic11_ListenersDemo"/>
+            <class name="testngtopics.Topic12_ExceptionsInTestNG"/>
+        </classes>
+    </test>
+</suite>

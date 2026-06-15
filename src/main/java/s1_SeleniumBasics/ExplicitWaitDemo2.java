@@ -28,17 +28,17 @@ public class ExplicitWaitDemo2 {
         // Create Explicit Wait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        // 1. presenceOfElementLocated (only DOM)
-        WebElement elementPresent = wait.until(
-                ExpectedConditions.presenceOfElementLocated(By.id("btn"))
-        );
-        System.out.println("Element is present in DOM");
+//        // 1. presenceOfElementLocated (only DOM)
+//        WebElement elementPresent = wait.until(
+//                ExpectedConditions.presenceOfElementLocated(By.id("btn"))
+//        );
+//        System.out.println("Element is present in DOM");
 
-        // 2. visibilityOfElementLocated
-        WebElement visibleElement = wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.id("text"))
-        );
-        System.out.println("Element is visible: " + visibleElement.getText());
+//        // 2. visibilityOfElementLocated
+//        WebElement visibleElement = wait.until(
+//                ExpectedConditions.visibilityOfElementLocated(By.id("text"))
+//        );
+//        System.out.println("Element is visible: " + visibleElement.getText());
 
         // 3. elementToBeClickable
         WebElement clickableBtn = wait.until(

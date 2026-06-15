@@ -25,6 +25,7 @@ public class U_JavaScript_Demo {
 		 * methods provided by the JavascriptExecutor interface.
 		 */
 		jse.executeScript("document.getElementsByClassName('search-keyword')[0].value='Cucumber';");
+		jse.executeScript("window.scrollBy(0,1000");
 
 	}
 

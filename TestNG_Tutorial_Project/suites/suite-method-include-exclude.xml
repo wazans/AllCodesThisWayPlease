@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Method Include Exclude Suite" parallel="false">
+    <test name="Method Filters">
+        <classes>
+            <class name="testngtopics.Topic03_TestNgXmlAndIgnoringTests">
+                <methods>
+                    <include name="xml.*"/>
+                    <exclude name="xmlCaseThree"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

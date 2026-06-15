@@ -33,7 +33,7 @@ public class Z22_Headless {
 		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 		// Specify the destination where the screenshot will be saved
-		File destFile = new File("src/main/java/Utils/myss1.png");
+		File destFile = new File("src/main/java/Utils/vimalan.png");
 		FileUtils.copyFile(srcFile, destFile);
 	}
 

@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Package Level Suite" parallel="false">
+    <test name="Package Execution">
+        <packages>
+            <package name="testngtopics.packagelevel"/>
+        </packages>
+    </test>
+</suite>
